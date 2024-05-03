@@ -1,5 +1,15 @@
+
+
 function Formulario () {
-    return <form>Esto es el Formulario</form>
+    return (
+        <form>
+            <input type="number" />
+            <input type="text" />
+            <input type="text" />
+            <input type="text" />
+            <input type="text" />
+        </form>
+    )
 }
 
 export default Formulario

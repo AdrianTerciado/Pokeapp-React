@@ -1,5 +1,5 @@
 function Footer () {
-    return <footer>Esto es... ¡el fooooooteeeer!</footer>
+    return <footer>Adrián Terciado i Jano</footer>
 }
 
 export default Footer

@@ -1,4 +1,4 @@
-function Card ({pokemonInfo}) {
+function Card ({pokemonInfo, articleSize, imgSize}) {
 
     const firstChar = pokemonInfo.name[0].toUpperCase();
     const restString = pokemonInfo.name.slice(1);
@@ -12,10 +12,10 @@ function Card ({pokemonInfo}) {
     const img = pokemonInfo.sprites.other.dream_world.front_default;
 
     return (
-        <article className="card">
-            <p> {number} </p>
-            <img src={img} className="img-pokemon" />
-            <p> {name} </p>            
+        <article className={articleSize} key={pokemonInfo.id}>
+            <p className="number-card"> {number} </p>
+                <img src={img} className={imgSize} />
+            <p className="pokemon-name"> {name} </p>            
         </article>
     )
 }
