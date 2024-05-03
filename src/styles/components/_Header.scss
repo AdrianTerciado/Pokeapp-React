@@ -1,5 +1,13 @@
-header {
-    background-color: red;
+.header {
+    background-color: rgba(255, 0, 0, 0.750);
     margin: 0;
     padding: 5px;
+    min-height: 8vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    &>.logo{
+        width:150px;
+    }
 }

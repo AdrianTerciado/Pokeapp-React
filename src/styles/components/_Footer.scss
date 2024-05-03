@@ -1,7 +1,9 @@
 footer {
-    background-color: red;
+    background-color: rgba(255, 0, 0, 0.750);
     color: white;
-    width: 100vw;
-    height: 8vh;
     text-align: center;
+    min-height: 8vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
