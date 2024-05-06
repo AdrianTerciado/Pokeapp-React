@@ -1,33 +1,46 @@
+import { BrowserRouter } from 'react-router-dom'
+import './styles/styles.scss';
+import Header from './components/Header/Header'
+import Main from './components/Main/Main'
+import Footer from './components/Footer/Footer'
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { ListaContext } from './context/ListaContext'
+import { PokemonContext } from './context/PokemonContext'
 
 function App() {
-  const [count, setCount] = useState(0)
+
+  const [lista, setLista] = useState([]);
+  const [pokemonID, setPokemonID] = useState(null);
+
+  const updateLista = (newPokemon) => {
+    setLista(newPokemon)
+  };
+
+  const listaData = {
+    lista,
+    updateLista
+  }
+
+  const updatePokemonID = (newID) => {
+    setPokemonID(newID)
+  };
+
+  const PokemonIDdata = {
+    pokemonID,
+    updatePokemonID
+  }
 
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <ListaContext.Provider value={listaData}>
+        <BrowserRouter >
+          <Header></Header>
+          <PokemonContext.Provider value={PokemonIDdata}>
+            <Main></Main>
+          </PokemonContext.Provider>
+        </BrowserRouter >
+      </ListaContext.Provider>
+      <Footer></Footer>
     </>
   )
 }

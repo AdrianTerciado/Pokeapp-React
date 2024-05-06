@@ -1,0 +1,28 @@
+.nav {
+
+   &>ul {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+
+      &>li {
+         list-style: none;
+         background-color: white;
+         border-radius: 5px;
+
+         &>.link {
+            color: black;
+            padding: 5px;
+            font-size: 1.3rem;
+         }
+      }
+
+      &>li:hover {
+         background-color: rgba(255, 255, 0, 0.825);
+
+         &>.link {
+            color: rgba(0, 68, 255, 0.7500);
+         }
+      }
+   }
+}

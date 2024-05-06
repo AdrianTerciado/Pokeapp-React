@@ -1,0 +1,46 @@
+.search {
+    display: flex;
+    flex-direction: column;
+
+    &>.background-result {
+        background-image: url("../../assets/fondo.jpg");
+        background-size: cover;
+        background-position: center;
+        min-height: 350px;
+        width: 100vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+.form {
+    display: flex;
+    align-items: center;
+    margin: 10px auto;
+    gap: 5px;
+
+    &>.input-form {
+        height: 40px;
+        width: 250px;
+        border-radius: 5px;
+        padding: 5px;
+    }
+
+    &>.button-form {
+        padding: 5px;
+        border: 1px solid black;
+        background-color: rgba(255, 0, 0, 0.500);
+        color: black;
+    }
+
+    &>.button-form:hover {
+        padding: 5px;
+        border: 1px solid black;
+        background-color: yellow;
+        color: blue;
+    }
+
+
+
+}
