@@ -1,8 +1,11 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
 import Card from "./Card/Card";
 import '../../../../styles/components/_Search.scss'; // Importa el archivo Sass
+import { ListaContext } from '../../../../context/ListaContext'
 
-function Search({ lista, setLista }) {
+function Search() {
+
+    const { lista, updateLista } = useContext(ListaContext);
 
     const [input, setInput] = useState("");
     const [pokemon, setPokemon] = useState(null);
@@ -42,7 +45,7 @@ function Search({ lista, setLista }) {
                 const resp = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemon}`);
                 const data = await resp.json();
                 setPokemonInfo(data);
-                setLista([
+                updateLista([
                     data,
                     ...lista
                 ]);
@@ -55,7 +58,7 @@ function Search({ lista, setLista }) {
         <>
             <section className="search">
                 <div className='background-result'>
-                {Object.keys(pokemonInfo).length === 0
+                {Object.keys(lista).length === 0
                     ? null
                     : <Card pokemonInfo={pokemonInfo} articleSize="card-large" imgSize="img-large"></Card>
                 }
