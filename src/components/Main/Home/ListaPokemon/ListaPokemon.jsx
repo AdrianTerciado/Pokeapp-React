@@ -1,10 +1,14 @@
 import Card from "../Search/Card/Card";
+import React, { useContext } from 'react';
+import { ListaContext } from '../../../../context/ListaContext'
 
-function ListaPokemon({ lista }) {
+function ListaPokemon() {
+
+    const { lista } = useContext(ListaContext);
 
     const paintList = () => {
-        return lista.map((item) =>
-            <Card pokemonInfo={item} articleSize="card-small" imgSize="img-small"></Card>
+        return lista.map((item, i) =>
+            <Card pokemonInfo={item} key={i} articleSize="card-small" imgSize="img-small"></Card>
         )
     }
 
